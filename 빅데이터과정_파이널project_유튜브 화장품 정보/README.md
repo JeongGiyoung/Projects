@@ -19,7 +19,8 @@
         * selenium : 상품정보를 네이버 쇼핑에서 scrapping
         * beautifulSoup 
       + NLP
-        * mecab, koNLPy네이버 쇼핑 리뷰 100개 감성분석(긍부정 판별 및 비율)
+        * mecab, koNLPy
+        * 네이버 쇼핑 리뷰 100개 감성분석(긍부정 판별 및 비율)
     - web-framwork 
       + 언어 : flask(python), html(+bootstrap)
       + IDE : pycharm
