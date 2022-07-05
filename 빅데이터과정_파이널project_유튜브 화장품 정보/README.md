@@ -1,7 +1,31 @@
 # [프로젝트 일지]
 
 ## 개발 구조
-<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fca2ctf%2FbtrGyOxPxif%2FEJCdDdks6EwPzu7FeeUXF0%2Fimg.png" alt="My Image">
+<img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/splash.jpg">
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fca2ctf%2FbtrGyOxPxif%2FEJCdDdks6EwPzu7FeeUXF0%2Fimg.png">
+
+[프로젝트 결과물]
+
+# 빅데이터 과정 파이널 프로젝트
+  * 제목 : S.YOL.C(유튜브 영상 내 여성 뷰티제품 실시간 정보 제공 서비스)
+    - Smart + YOLO + Comsumption
+  * 서비스 목표 : 유튜브로 제품 리뷰를 보고 다시 네이버 쇼핑몰에서 상품 정보 찾아보는 번거로움 해결을 목표. 
+  * 주요기술 : 
+    - 언어 : python
+    - IDE : 아나콘다, 구글 colab
+      + 객체 탐지(objection dectection)
+        * YOLOv5 : 유튜브 영상 내 뷰티 제품을 YOLOv5(객체 탐지 모델)로 인식 
+      + crawling 
+        * selenium : 상품정보를 네이버 쇼핑에서 scrapping
+        * beautifulSoup 
+      + NLP
+        * mecab, koNLPy네이버 쇼핑 리뷰 100개 감성분석(긍부정 판별 및 비율)
+    - web-framwork 
+      + 언어 : flask(python), html(+bootstrap)
+      + IDE : pycharm
+
+
+<hr>
 
 # # 2022-06-30(목)
   * html 버튼 스피너
