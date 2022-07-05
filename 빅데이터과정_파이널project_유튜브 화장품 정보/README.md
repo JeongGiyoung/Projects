@@ -1,8 +1,8 @@
 # [프로젝트 일지]
 
 ## 개발 구조
-<img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/splash.jpg">
-<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fca2ctf%2FbtrGyOxPxif%2FEJCdDdks6EwPzu7FeeUXF0%2Fimg.png">
+<img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/splash.jpg" width : 600 hight :480 align :center>
+
 
 [프로젝트 결과물]
 
@@ -23,6 +23,8 @@
     - web-framwork 
       + 언어 : flask(python), html(+bootstrap)
       + IDE : pycharm
+
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fca2ctf%2FbtrGyOxPxif%2FEJCdDdks6EwPzu7FeeUXF0%2Fimg.png">
 
 
 <hr>
