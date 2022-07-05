@@ -1,5 +1,8 @@
 # [프로젝트 일지]
 
+## 개발 구조
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fca2ctf%2FbtrGyOxPxif%2FEJCdDdks6EwPzu7FeeUXF0%2Fimg.png" alt="My Image">
+
 # # 2022-06-30(목)
   * html 버튼 스피너
   * 추천시스템 추가
