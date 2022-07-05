@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>{{ app_data['description'] }}</h1>
+
+<h2>Service2 page</h2>
+
+<hr>
+
+<br><br><br>
+
+<div class="container">
+    <h4>YouTube Data API</h4>
+    <form action="/search2" method="POST">
+        <div class="form-group">
+            <input type="text" class="form-control" name="search" placeholder="Search Your Favorite Videos">
+        </div>
+        <div>
+            <input type="submit" value="Search" class="btn btn-primary btn-lg">
+
+        </div>
+    </form>
+</div>
+
+{% endblock %}

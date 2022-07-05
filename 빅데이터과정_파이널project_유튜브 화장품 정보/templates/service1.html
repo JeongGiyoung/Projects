@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>{{ app_data['description'] }}</h1>
+
+<h2>Service page</h2>
+
+<div align="center">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">original</th>
+            <th scope="col">detected</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/wltkJ-Nsi5g"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </td>
+            <td>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/fX-AyJQvt-Q?start=9"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>2행 1열</td>
+            <td>2행 2열</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div style="background-color:lightgrey; color:black; text-align:center">
+    <p>
+        <h3 align="center">
+            같은 모양, 다른 색깔을 구분하는지 확인
+        </h3>
+</div>
+<div>
+    </p>
+     <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">original</th>
+            <th scope="col">detected</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/61N29RMBiIA"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </td>
+            <td>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/BzDBxbdcKHo"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>2행 1열</td>
+            <td>2행 2열</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>
+    updated on June 23th, 2022
+</p>
+{% endblock %}

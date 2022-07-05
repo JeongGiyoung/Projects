@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h1>{{ app_data['description'] }}</h1>
+
+<h2>Service2 page</h2>
+
+<br><br><br>
+
+<div class="container">
+    <h4>Welcome to Flask Web Scraping </h4>
+    <form action="/search2" method="POST">
+        <div class="form-group">
+            <input type="text" class="form-control" name="search" placeholder="Search for Everything">
+        </div>
+        <div>
+            <button class="btn btn-primary btn-lg" type="submit" name="action">
+                Search
+                <!--           <i class="material-icons right">send</i>  -->
+            </button>
+        </div>
+    </form>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% for i in message %}
+        <div class="col s4">
+            <div class="card-deck">
+                <div class="card-body">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <a href="https://www.youtube.com/watch?v={{i['id']}}">
+                            <img class="activator" width="250" height="200" src="{{i['video_image']}}">
+                        </a>
+                        <br>
+                        <span class="card-title activator black-text text-darken-5">
+                                {{i['video_title']}}
+                        </span>
+                        <div>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    {{i['video_description']}}
+                                </small>
+                            </p>
+                        </div>
+                        <div>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    <a href="/get_more2/{{i['channelId']}}/{{search}}/{{i['id']}}">
+                                        <button type="button" class="button"
+                                                onclick="this.classList.toggle('button--loading')">
+                                            <span class="button__text">View More</span>
+                                        </button>
+                                    </a>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
