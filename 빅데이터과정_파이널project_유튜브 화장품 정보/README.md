@@ -1,7 +1,7 @@
 # [프로젝트 일지]
 
 ## 개발 구조
-<img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/splash.jpg" width : 600 hight :480 align :center>
+<img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/splash.jpg" width = 600 hight = 480 align = "center">
 
 
 [프로젝트 결과물]
