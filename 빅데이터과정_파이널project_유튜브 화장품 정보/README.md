@@ -33,6 +33,21 @@
 
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F649GM%2FbtrGKbTByWA%2FMCKSWCJKVulEUNdLWSnxd1%2Fimg.png">
 
+# Attributes, appreciates
+
+## ## 객체 인식
+  * YOLOv5 공식 github. 2022. https://github.com/ultralytics/yolov5
+  * DeepLearning. 2020. YOLOv5 training with custom data. https://youtu.be/GRtgLlwxpc4
+## ## Flask
+  * petersimeth. 2020. basic-flask-template. https://github.com/petersimeth/basic-flask-template.git
+## ## Crawling
+  * kjh1337. 2022. velog. https://velog.io/@kjh1337/네이버-쇼핑몰-리뷰-크롤링
+## ## Every Emojis in S.YOL.C
+  * https://www.w3schools.com/charsets/ref_emoji.asp
+  * https://www.amp-what.com/unicode/search/spee
+## ## NLP
+  * 유원준. 2022. wikidocs. https://wikidocs.net/book/2155
+
 
 <hr>
 
