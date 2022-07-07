@@ -29,14 +29,25 @@
 
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fca2ctf%2FbtrGyOxPxif%2FEJCdDdks6EwPzu7FeeUXF0%2Fimg.png">
 
+<img src=https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbCtFtR%2FbtrGFKiqwAT%2FdWapyemFwn6iqkQJBw4qAk%2Fimg.png">
+
 
 <hr>
 
 # [프로젝트 일지]
 
+# # 2022-07-07(목)
+  * ppt 수정
+    - 마지막 점검
+
+# # 2022-07-06(수)
+  * ppt 수정
+    - 리뷰 텍스트 1개 출력
+
 # # 2022-07-05(화)
   * ppt 수정
     - 쓰인 기술 소개 정리
+    - 웹캠 시현 준비
 
 # # 2022-07-02(토)
   * 멘토링
