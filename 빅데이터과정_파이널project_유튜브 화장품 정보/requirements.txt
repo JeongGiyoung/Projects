@@ -2,7 +2,7 @@ absl-py==1.1.0
 astunparse==1.6.3
 async-generator==1.10
 attrs==21.4.0
-beautifulsoup4==4.11.1
+beautifulsoup4==4.4.1
 bs4==0.0.1
 cachetools==5.2.0
 certifi==2022.5.18.1
@@ -30,6 +30,7 @@ googleapis-common-protos==1.56.2
 grpcio==1.47.0
 h11==0.13.0
 h5py==3.7.0
+html-table-parser==0.1.0
 httplib2==0.20.4
 huggingface-hub==0.8.1
 idna==3.3

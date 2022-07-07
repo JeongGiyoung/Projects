@@ -35,10 +35,9 @@
                     <thead>
                     <tr style="vertical-align:middle" align="center">
                         <th scope="col">
+                            <span style='font-size:50px;'>&#10024;</span>
+                            <br>
                             네이버랭킹 검색 첫 번째 결과
-                        </th>
-                        <th scope="col">
-                            네이버 쇼핑 리뷰 긍부정
                         </th>
                     </tr>
                     </thead>
@@ -54,35 +53,75 @@
                             {{ search_list_price[idx] }}
 
                             {% endfor %}
+
+                            <hr>
+                            <b>
+                                <span style='font-size:50px;'>&#10069; &#10069; &#10069;</span>
+                                <br>
+                                네이버 최저가
+                            </b>
+                            {{ result_cheapest|safe }}
+
                         </td>
+                    <tr style="vertical-align:middle" align="center">
                         <td>
-                            {{ positive_result }}
+                            <b>
+                                <span style='font-size:50px;'>&#11088; &#11088; &#11088;</span>
+                                <br>
+                                리뷰 긍부정
+                            </b>
                             <br>
+                            (네이버 쇼핑 리뷰)
+                            <br>
+                            <hr>
+                            <span style='font-size:50px;'>&#128077;</span>
+                            <span style="font-size:1.5em;  color: green;">
+                            {{ positive_result }}
+                            </span>
+                            <br>
+                            <span style='font-size:20px;'>&#128078;</span>
                             {{ negative_result }}
+
+                            <hr>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    Reivew
+                                </div>
+                                <div class="card-body">
+                                    <blockquote class="blockquote mb-0">
+                                        <p style="font-size:10px">{{ print_review }}</p>
+                                        <footer class="blockquote-footer" style="font-size:10px">구매자 A
+                                            <cite title="Source Title">
+                                                네이버 쇼핑몰
+                                            </cite>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     <tr style="vertical-align:middle" align="center">
                         <td>
+                            <span style='font-size:50px;'>&#128488;</span>
+                            <br>
                             <b>
                                 해쉬태그(추천 시스템)
                             </b>
                             <br>
                             (영상에서 추출된 자막 기반)
-                            <br><hr>
-                            {% for mmr in result_mmr %}
-                            {{ '#' + mmr }}<br>
-                            {% endfor %}
+                            <br>
+                            <hr>
+                            <p class="text-warning bg-dark">
+                                {% for mmr in result_mmr %}
+                                {{ '#' + mmr }}<br>
+                                {% endfor %}
+                            </p>
                         </td>
-                        <td>blank</td>
                     </tr>
                     </tbody>
                 </table>
             </td>
-        </tr>
-        <tr style="vertical-align:middle" align="center">
-            <th scope="row">2</th>
-            <td>2행 1열</td>
-            <td>2행 2열</td>
         </tr>
         </tbody>
     </table>

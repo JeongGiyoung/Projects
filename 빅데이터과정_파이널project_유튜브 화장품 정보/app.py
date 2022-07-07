@@ -5,11 +5,19 @@
 from flask import Flask, render_template, request
 from data import YouTubeData
 
-# libraries for navershopping
+# libraries for crawling_navershopping_name,price,img
 from bs4 import BeautifulSoup
 import time
 
 from selenium import webdriver
+
+# libraries for crawling_navershopping_cheapest price
+from selenium import webdriver
+from bs4 import BeautifulSoup
+from html_table_parser import parser_functions as parser
+from time import sleep
+import requests
+import pandas as pd
 
 # libraries for sentiment analysis
 import re
@@ -139,6 +147,41 @@ def get_more2(channelId, search, videoid):
 
         driver.close()
 
+        #########################################################################################
+        ####################crawling_navershopping_cheapest price################################
+        #########################################################################################
+
+        name = ['보다나 트리플 플로우 물결 고데기 크리미블루 40형']
+        category = ['별점']
+
+        ns_address = "https://search.shopping.naver.com/catalog/28640667554?query=%EB%B3%B4%EB%8B%A4%EB%82%98%20%ED%8A%B8%EB%A6%AC%ED%94%8C%20%ED%94%8C%EB%A1%9C%EC%9A%B0%20%EB%AC%BC%EA%B2%B0%20%EA%B3%A0%EB%8D%B0%EA%B8%B0%20%ED%81%AC%EB%A6%AC%EB%AF%B8%EB%B8%94%EB%A3%A8%2040%ED%98%95&NaPm=ct%3Dl4i2oz3s%7Cci%3D2f3c84ac58c9161866b5a0ef7228d739e6b72414%7Ctr%3Dslsl%7Csn%3D95694%7Chk%3D9bd6e369589d5ca6dc17f187c8b39f2c57a36cb9"
+
+        # xpath
+        shoppingmall_review = "/html/body/div/div/div[2]/div[2]/div[2]/div[3]/div[6]/ul"
+
+        header = {'User-Agent': ''}
+        d = webdriver.Chrome('C:/Users/admin/Desktop/chromedriver_win32/chromedriver.exe')  # webdriver = chrome
+        d.implicitly_wait(3)
+        d.get(ns_address)
+        req = requests.get(ns_address, verify=False)
+        html = req.text
+        soup = BeautifulSoup(html, "html.parser")
+        sleep(2)
+
+        d.close()
+
+        select_table = '#__next > div > div.style_container__3iYev > div.style_inner__1Eo2z > div.style_content_wrap__2VTVx > div.style_content__36DCX > div > div.summary_info_area__3XT5U > div.condition_area > table'
+
+        temp = soup.select(select_table)
+
+        p = parser.make2d(temp[0])
+
+        df = pd.DataFrame(p[1:], columns=p[0])
+        result_cheapest = df.iloc[0:1, :2]
+
+        result_cheapest = result_cheapest.to_html()
+
+
         ##########################################################################################
         ##########################################################################################
         ##########################################################################################
@@ -146,7 +189,7 @@ def get_more2(channelId, search, videoid):
 
         mecab = Mecab('C:/mecab/mecab-ko-dic')
 
-        total_data = pd.read_table('C:/Sources/Projects/빅데이터과정_파이널project_유튜브 화장품 정보/300data_straightener/ratings_total.txt', names=['ratings', 'reviews'])
+        total_data = pd.read_table('C:/Sources/Projects/빅데이터과정_파이널project_유튜브 화장품 정보/res/300data_straightener/ratings_total.txt', names=['ratings', 'reviews'])
         total_data['label'] = np.select([total_data.ratings > 3], [1], default=0)
 
         # reviews 열에서 중복인 내용이 있다면 중복 제거
@@ -215,7 +258,7 @@ def get_more2(channelId, search, videoid):
         X_train = pad_sequences(X_train, maxlen=max_len)
         X_test = pad_sequences(X_test, maxlen=max_len)
 
-        path = "C:/Sources/Projects/빅데이터과정_파이널project_유튜브 화장품 정보/300data_straightener/result/sensitivityAnalysis/sensitivityAnalysis_best_model_forNavershopping_Review.h5"
+        path = "C:/Sources/Projects/빅데이터과정_파이널project_유튜브 화장품 정보/res/300data_straightener/result/sensitivityAnalysis/sensitivityAnalysis_best_model_forNavershopping_Review.h5"
         loaded_model = load_model(path)
 
         def sentiment_predict(new_sentence):
@@ -232,7 +275,7 @@ def get_more2(channelId, search, videoid):
                 print("{:.2f}% 확률로 부정 리뷰입니다.".format((1 - score) * 100))
 
         tmp = pd.read_csv(
-            'C:/Sources/Projects/빅데이터과정_파이널project_유튜브 화장품 정보/300data_straightener/result/sensitivityAnalysis/crawledData_naverReviews_VodanaStraightner_blue40.csv')
+            'C:/Sources/Projects/빅데이터과정_파이널project_유튜브 화장품 정보/res/300data_straightener/result/sensitivityAnalysis/crawledData_naverReviews_VodanaStraightner_blue40.csv')
 
         def sentiment_predict_NaverShoppingReviews(new_sentence):
             new_sentence = re.sub(r'[^ㄱ-ㅎㅏ-ㅣ가-힣 ]', '', new_sentence)
@@ -268,7 +311,7 @@ def get_more2(channelId, search, videoid):
         ##########################################################################################
         ##########################################################################################
         ##########################################################################################
-        ###### recommendation part #####
+        ###### keyword(hashtag) part #####
 
         srt = YouTubeTranscriptApi.get_transcript(videoid, languages=['ko'])
 
@@ -344,21 +387,28 @@ def get_more2(channelId, search, videoid):
 
         result_mmr = mmr(doc_embedding, candidate_embeddings, candidates, top_n=5, diversity=0.7)
 
+        """
+        리뷰 1개 출력
+        """
+        print_review = tmp['review'][0]
 
         return render_template("moredata2.html",
                                subCount=content,
                                statistics=stats,
                                snippet=snippet,
                                app_data=app_data,
-                               # followings are shoppingData
+                               # followings are shoppingData_name,price,img
                                search_list=search_list,
                                search_list_src=search_list_src,
                                search_list_price=search_list_price,
                                len=1,
                                positive_result=positive_result,
                                negative_result=negative_result,
-                               # followings are for recommendation data
-                               result_mmr = result_mmr
+                               # followings are shoppingData for cheapest price
+                               result_cheapest = result_cheapest,
+                               # followings are for keyword(hashtag) data
+                               result_mmr = result_mmr,
+                               print_review = print_review
                                )
     else:
         return "Page Not Found"
